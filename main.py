@@ -12,7 +12,7 @@ assistant_name = "" #enter your assistant name
 def speak(audio):
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
-    engine.setProperty('voice', voices[0].id)
+    engine.setProperty('voice', voices[0].id) #0 for male 1 for female
     engine.say(audio)
     engine.runAndWait()
 
@@ -56,7 +56,7 @@ def takeCommand():
 
         try:
             print("Recognizing...")
-            query = r.recognize_google(audio, language='en-us')
+            query = r.recognize_google(audio, language='en-us') #language
             print(f"User said: {query}\n")
         
         except Exception as e:
